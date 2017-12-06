@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Sankey Example</title>
+    <script src="../bower_components/d3/d3.js"></script>
+    <script src="../bower_components/d3-plugins-sankey/sankey.js"></script>
+    <script src="../bower_components/d3.chart/d3.chart.js"></script>
+    <script src="../d3.chart.sankey.js"></script>
+    <script>
+      var json = [{"region": "Larissa", "project_description": "Help Refugees fully funds InterVolve, a Greek non-profit humanitarian organisation based in Thessaloniki. They provide support and resources to help refugees manage and move on in their own lives with dignity, from women's services to children's informal education.\n", "duration": "18", "country": "UK", "project_name": "Intervolve", "project_type": "emergency", "monthly_cost": "20,000"}, {"region": "Northern France", "project_description": "Help Refugees fully funds Refugee Youth Service, who support children and young people living in the Calais, Dunkirk and the surrounding areas. mobile youth service offering legal advice, psychological support and child protective services for the vulnerable young people still living there.", "duration": "24", "country": "France", "project_name": "Refugee Youth Service", "project_type": "youth/children", "monthly_cost": "6000"}, {"region": "Subotica, Sid, Belgrade", "project_description": "Funding medical equipments, hospital visits and bills, transport costs and volunteer expenditure for this small medical group. They are providing free field medical care for refugees and asylum seekers outside of official camps in Serbia, as well as ad hoc clothing and food", "duration": "24", "country": "Serbia ", "project_name": "MedVint", "project_type": "medical", "monthly_cost": "5000"}, {"region": "Thessaloniki ", "project_description": "Construction team of long-term volunteers who build whatever is needed in camps across Northern Greece. Most recent project we funded was a children's library in Larissa camp, but they've also built free shops/distribution points, shade structures etc. HR covering tools, materials, transport costs and volunteer expenses ", "duration": "4", "country": "UK", "project_name": "The Timber Project ", "project_type": "youth/children", "monthly_cost": "6000"}, {"region": "Lesvos ", "project_description": "Watershed do hygiene/sewage works in camps and settlements across Greece. HR are covering tools, materials and transport costs for construction of water/sanitation facilities in Lesvos", "duration": "3", "country": "UK", "project_name": "WaterShed", "project_type": "other", "monthly_cost": "35,000"}, {"region": "Kilkis", "project_description": "Greek-led housing project near the Macedonian border, housing refugee families and destitute local families with an 'inclusion centre' which offers language and computer classes", "duration": "24+", "country": "UK", "project_name": "Omnes ", "project_type": "shelter", "monthly_cost": "12,000"}, {"region": "Lesvos ", "project_description": "Group of Lesvos locals have set up a supported camp for vulnerable refugees and asylum seekers, a safe space. HR covers food and general running costs ", "duration": "24+", "country": "UK", "project_name": "Pipka - Lesvos Solidarity ", "project_type": "shelter", "monthly_cost": "8,000"}, {"region": "Athens ", "project_description": "Teaching asylum-seeking and local children to skate. The FMS team travel round Athens and the nearby camps with a ramp running sessions for girls and boys of all ages. HR fully funds this project", "duration": "12", "country": "UK", "project_name": "Free Movement Skateboarding ", "project_type": "youth/children", "monthly_cost": "5000"}, {"region": "Thessaloniki ", "project_description": "Early Childhood Development program for refugee children which implicitly acknowledges trauma and gives children the tools to process their experiences. Supports parents with attachment and personal trauma too. Fully funded by HR", "duration": "9", "country": "UK", "project_name": "Baytna ", "project_type": "youth/children", "monthly_cost": "8000"}, {"region": "Idleb, Houla, Homs ", "project_description": "Empowering vulnerable children, youth and women in besieged areas of Syria. Reconstruction/rehabilitation of schools, education programs", "duration": "6", "country": "Syria ", "project_name": "Emissa ", "project_type": "education ", "monthly_cost": "3,500"}, {"region": "Beqaa Valley", "project_description": "Women's centre for refugees in the Beqaa Valley, supporting and educating Syrian women. Counts as education and welfare", "duration": "12", "country": "Lebanon ", "project_name": "Women Now ", "project_type": "welfare", "monthly_cost": "6,000"}, {"region": "Aleppo province ", "project_description": "Child-friendly spaces and psycho-social support for local and internally displaced children ", "duration": "24+", "country": "Syria ", "project_name": "Space of Hope ", "project_type": "youth/children", "monthly_cost": "25,000"}, {"region": "Aleppo province ", "project_description": "Working outside regime-held areas to provide quality medical care to Syrians, particularly paediatric care", "duration": "24+ ", "country": "Syria ", "project_name": "Independent Doctors Association", "project_type": "medical", "monthly_cost": "50,000"}, {"region": "N Greece, Islands, Athens ", "project_description": "Fresh fruit and vegetables, dry foods like rice and lentils, for people living in camps or on the streets in mainland Greece/Lesvos", "duration": "12+ ", "country": "UK", "project_name": "The Food Project", "project_type": "Food ", "monthly_cost": "60,000"}, {"region": "Lesvos ", "project_description": "Community centre run by Moria residents, including its own cryptocurrency, a makeshift caf\u00e9, gym, playground, cinema, women's space. HR covers food bills to be cooked in the kitchen for visitors", "duration": "6", "country": "UK", "project_name": "One Happy Family", "project_type": "Food ", "monthly_cost": "5000 (encompassed in Food Project budget) "}];
+    </script>
+    <style>
+      body {
+        width: 960px;
+        margin: auto;
+      }
+
+      #chart {
+        width: 960px;
+        height: 500px;
+      }
+
+      .node rect {
+        fill-opacity: .9;
+        shape-rendering: crispEdges;
+      }
+      .node text {
+        text-shadow: 0 1px 0 #fff;
+      }
+
+      .link {
+        fill: none;
+        stroke: #000;
+        stroke-opacity: .2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basic Sankey Diagram</h1>
+
+    <div id="chart"></div>
+
+    <p>A basic Sankey diagram without interaction.</p>
+
+    <script>
+
+      function onlyUnique(value, index, self) { 
+         return self.indexOf(value) === index;
+      }
+      var countries = json.map(function(el) {
+          return el.country;
+      });
+      var uniq_c = countries.filter(onlyUnique);
+
+      var types = json.map(function(el) {
+          return el.project_type;
+      });
+      var uniq_t = types.filter(onlyUnique);
+
+      var names = json.map(function(el) {
+          return el.project_name;
+      });
+      var uniq_n = names.filter(onlyUnique);
+
+
+      var uniq = [];
+      uniq = uniq.concat(uniq_c);
+      uniq = uniq.concat(uniq_t);
+      uniq = uniq.concat(uniq_n);
+      
+      
+      var nodes = []; 
+      uniq_c.forEach(function(el) {
+         nodes.push({name: el});
+      });
+
+      uniq_t.forEach(function(el) {
+         nodes.push({name: el});
+      });
+
+      uniq_n.forEach(function(el) {
+         nodes.push({name: el});
+      });
+      
+      var links = [];
+      json.forEach(function(el) {
+            links.push({source: uniq.indexOf(el.country), target: uniq.indexOf(el.project_type), value: 10});
+            links.push({source: uniq.indexOf(el.project_type), target: uniq.indexOf(el.project_name), value: 5});
+      });
+
+      var result = {
+        nodes: nodes,
+        links: links
+      };
+
+      console.log(result);
+      
+//      d3.json(json, function(error, json) {
+        var chart = d3.select("#chart").append("svg").chart("Sankey");
+
+        chart.draw(result);
+//      });
+    </script>
+  </body>
+</html>
