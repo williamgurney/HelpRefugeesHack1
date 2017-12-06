@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "commanding-way-188216",
+  "private_key_id": "f09324c83f8cf9c9fb9c0e867cc8a48d8dc5f2b6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCwodVohCj+DLr5\nxoSwIIZ3HWIvMCmsfGO7bP3FS4T3afLqkP3xvPWz8jwmCMWfyNlooSkpsxXpXJ6Z\nMusKTdLK7emXxExEiWaQSCOx/ZvBr+MKtniqGNPwVb7ofqOoqlVt6W/w1NDgUmqh\nv+CpCRPRp7MeJbL6ur+DhaS2NNdoqGTsV//Pc5okCb7nK9aDrsfG6VGTmSIuzkKc\nPqnNM6tphc7Gu/zhUjbtc/xNMAXuVlihylRocGxwjIMj0z2Ud/ocqRKBJHyhv26H\nn/j6qO/jE7i59WZ3wAXg9bnXz3qzb7nV4YeJvjlUnEZW/kKYMxlBcWPcgycGc+aq\nGu58yHzhAgMBAAECggEACpJdFgjW9UGozTtTBMGlmqqBDmb5D5BQXc7rr2vSNQa7\n2cs8z8OqBw+oBvS+c05PqOIAdzT3SkTXXz77b13yEGBF+2Xt1KpOn7MZo9UUhfaz\nhZgfR7r9sGRJbVvrCrTLMS1oHEd4ivyT0kOMPEHFVGaPo23JNRWJUeNlVNx7yhE0\nnwpfpvor32801R6agcH40TFMlvuiR6sHGM5O98Lr8gwUPCgukeprc3FDZtNSIkVc\nN+ufT/3cT4NfH2yflIYbwe/Hl/2xMDz9zWbnzlgsDwveaJzdmXTPCBdgCbHcBpDn\nOBMe2uoZv0gNKxsZT2TJo00tgaxkLmxWNtAVZr0hcwKBgQDglWg0KuX7tE9nmX/U\nXp2xj0xgsDYjDKNs6EON+11gl36GxEGBgTbFQhizL0Eb/k4Rm25HX+801TSFhV+z\nES6+zf0zZbQmKu3axmuhMz7PW9vOA8lPbeUu6IrEy55GGL6zo6ojvN9bS+EigTGR\n0Y0BTnQ0Va0gR8pG0e2zPQ4xswKBgQDJVzsQxIL9lc333Y06WLmYR1WOSayZCkKr\n8dM/MD/YFmQzE7a0zUNDmgPPCKzWDwAvci/aBYYf/ULeZzi0b4f/bJe8RVpEQoex\n8k1sazrZaIQmEiUHD3DiM9CIcWQ6Wjb+XakNc/u0JFnd1CaIWFhtPnq8BKwzh0B5\nbTBRSYxFGwKBgH03UE4lzOy177/XecoypsGlH/SYytZn6YaDSYcUK0/7p3QEYHGQ\nVbVN0O+23Rp6g5SVkLsC5iAS76GyZ1Uzs1h3CUFq5zKQpOVh1AigxdhfYwJOYiOD\nJlEtHpHy5WA307vc+LPMTsxcVj4iwjyHFZMw5uF3E3v4CvPJgDp7RDq5AoGAfWyj\n1Ow2FbbOmkwgAGrpIx29BGiM5sFniymYSVLLUteQD+mF9dewwVoeaUikMq0hlmzx\ntkWeqirhDx8KSgz4kXuagqRJeSBg289vv8yE2o6rU/QVsPJDhgZ1L6pDn743Z/n8\np+7KrAvBF9ljL6ipXVSArMPUaj0lQv9sDBdfFGUCgYBoJcwH7AhnlbCCfWY9c2cz\n2Fphw6C5NF9ngvScyai325bNwOeImD+FUa2ZriVApJT7l2WssrZNQaJwsTZfWJ+L\nT7bWnA0WjOf/Qj/gzllkkNlrCWAiTm2yHTtHDd8kTFMPYmBTafcSRoUx2na9iil9\nQG8Q1Hwc5kL0iBkTsCSGJw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "help-refugees@commanding-way-188216.iam.gserviceaccount.com",
+  "client_id": "106483387087954142510",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/help-refugees%40commanding-way-188216.iam.gserviceaccount.com"
+}
