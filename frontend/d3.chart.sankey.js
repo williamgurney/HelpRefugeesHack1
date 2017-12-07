@@ -1,7 +1,7 @@
 /*!
  * d3.chart.sankey - v0.4.0
  * License: MIT
- * Date: 2017-11-06
+ * Date: 2017-11-07
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
