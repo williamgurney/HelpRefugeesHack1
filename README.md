@@ -11,6 +11,10 @@ As a result, its workforce is always changing, and systems always evolving, and 
 In an ideal world, every single one of its donors would know exactly what the money they donate has been spent on - to the penny. If they donated £10, they would be able to see that their money has been spent on the ingredients for hot meals which have fed a family of five for two days, for example. 
 However, given the nature of unrestricted funding - which they always aim for as it helps them to respond to need flexibly - this can be nigh on impossible. 
 
+The solution:
+
+We are looking to create a map of our projects. In improving transparency in our operations, our donors know where their money is being spent. We want to show exactly where the funds are going and what they are being spent on.
+
 
 ## The Setup
 
